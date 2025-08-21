@@ -117,5 +117,4 @@ SELECT AVG(cp.Value) AS AvgCoffeeProduction
 FROM coffee_production cp
 join honey_production hp
   ON cp.Year = hp.Year
-WHERE hp.Value and cp.Value > 1000000;
-
+WHERE hp.Value > 1000000;
