@@ -113,8 +113,9 @@ AND cp.Year = 2023
 AND cp.Period = 'APR';
 
 --Q17. Find the average coffee production for all years where the honey production exceeded 1 million. (Answer: 6426666.67)
-SELECT AVG(cp.Value)
+SELECT AVG(cp.Value) AS AvgCoffeeProduction
 FROM coffee_production cp
-WHERE cp.Year IN (
-    SELECT hp.Year FROM honey_production hp WHERE hp.Value > 1000000
-);
+join honey_production hp
+  ON cp.Year = hp.Year
+WHERE hp.Value and cp.Value > 1000000;
+
